@@ -1,0 +1,44 @@
+# cateye_harness 开发目录
+__pycache__/
+*.py[cod]
+build_staging/
+.venv/
+venv/
+.pytest_cache/
+.DS_Store
+Thumbs.db
+
+# ---- 流程 / 指导文档（禁止进仓库，模板要求）----
+UPLOAD_AGENT.md
+ISSUE_SUBMISSION.md
+
+# ---- 运行期生成的配置与数据（宿主会在插件目录生成）----
+/config.toml
+/config_back/
+/data/
+*.log
+
+# ---- 宿主安装回执与更新备份 ----
+.maibot-release.json
+.update_backups/
+
+# ---- 构建产物 ----
+*.egg-info/
+build/
+dist/
+env/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+test_*.py
+logs/
+
+# ---- 追加自 MaiBot插件开发文档v1.3.0/.gitignore 模板（sync 2026-10-05）----
+*_test.py
+smoke_test*.py
+/tests/
+desktop.ini
+.idea/
+.vscode/
+*.swp

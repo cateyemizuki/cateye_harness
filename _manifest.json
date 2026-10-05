@@ -1,0 +1,50 @@
+{
+  "manifest_version": 2,
+  "id": "github.cateye.cateye-harness",
+  "version": "0.1.1",
+  "name": "猫眼测试夹具（cateye-harness）",
+  "description": "MaiBot 宿主自测试夹具（TEST_PROCEDURE §四）：① /h_inject 构造标准 MessageDict 经夹具自带 receive 网关注入宿主完整入站链；② /h_seq 预置 6 个里程碑场景（bus_check/affection_basic/affection_review/attribution/silence/mood_effect）的步进脚本；③ /h_freeze、/h_resume 停用/恢复被测插件 tool/hook 组件；④ chat.receive.after_process 环路守卫计数 麦麦⇄100000004 往来；⑤ /h_state 进程内读取被测插件状态与 decision_logs 尾部；⑥ /h_wait_reload、/h_api、/h_models、/h_say；⑦ 文件任务通道（v0.1.1）：后台每 2s 轮询自身数据目录 tasks/*.json，按文件名顺序分发 inject/seq/state/freeze/resume（复用同一批核心函数、动作白名单、参数纯数据），回执写 results/<id>.json、任务归档 tasks/done/。自身不调 LLM、不主动发言，守卫只计数不存内容。",
+  "author": {
+    "name": "cateye",
+    "url": "https://github.com/cateyemizuki"
+  },
+  "license": "MIT",
+  "urls": {
+    "repository": "https://github.com/cateyemizuki/cateye_harness"
+  },
+  "host_application": {
+    "min_version": "1.0.0",
+    "max_version": "1.99.99"
+  },
+  "sdk": {
+    "min_version": "2.6.0",
+    "max_version": "2.99.99"
+  },
+  "dependencies": [],
+  "plugin_type": "tool",
+  "display": {
+    "icon": {
+      "type": "lucide",
+      "value": "flask-conical",
+      "fallback": "test-tube"
+    }
+  },
+  "capabilities": [
+    "send.text",
+    "chat.get_stream_by_group_id",
+    "chat.get_stream_by_user_id",
+    "chat.open_session",
+    "component.get_all_plugins",
+    "component.enable",
+    "component.disable",
+    "api.call",
+    "llm.get_available_models"
+  ],
+  "i18n": {
+    "default_locale": "zh-CN",
+    "supported_locales": [
+      "zh-CN",
+      "en-US"
+    ]
+  }
+}
